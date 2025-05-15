@@ -31,7 +31,7 @@ export function Hero() {
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="block">Hi, I&apos;m a</span>
-            <span className="text-primary">Full Stack Developer</span>
+            <span className="text-primary">Software Engineer</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0">
             Specialized in JavaScript, Node.js, React, PHP, Symfony, Laravel, and more. 
