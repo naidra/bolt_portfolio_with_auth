@@ -1,0 +1,51 @@
+
+services:
+  app:
+    build:
+      context: .
+
+    image: portfolio_nextjs_postgres_auth
+    container_name: portfolio_nextjs_postgres_auth
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - POSTGRES_URL=${POSTGRES_URL}  # This will load the environment variable from .env
+      - DATABASE_URL=${DATABASE_URL}  # This will load the environment variable from .env
+      - POSTGRES_PRISMA_URL=${DATABASE_URL}  # This will load the environment variable from .env
+      - JWT_SECRET=${JWT_SECRET}  # This will load the environment variable from .env
+      - SECRET_ACC_KEY=${SECRET_ACC_KEY}  # This will load the environment variable from .env
+      - SECRET_ACC_REGISTER_KEY=${SECRET_ACC_REGISTER_KEY}  # This will load the environment variable from .env
+    env_file:
+      - .env  # This will ensure Docker reads the .env file
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /app
+          ignore:
+            - node_modules
+        - action: rebuild
+          path: package.json
+    networks:
+      - app_network
+    depends_on:
+      - db
+  db:
+    image: postgres:17-alpine
+    container_name: portfolio_nextjs_postgres_auth_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: db_nextjs_postgres_auth
+      POSTGRES_PASSWORD: db_nextjs_postgres_password999
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+    env_file:
+      - .env  # This will ensure Docker reads the .env file
+          
+networks:
+  app_network:
+    driver: bridge

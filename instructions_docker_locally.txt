@@ -1,0 +1,28 @@
+When running locally using docker
+
+# set the environment variable in the .env file:
+DATABASE_URL="postgresql://postgres:db_nextjs_postgres_password999@db:5432/db_nextjs_postgres_auth"
+
+# Start the app and db using docker bu executing the following commands:
+docker-compose down
+docker-compose up --build
+
+# Reset the environment variable in the .env file:
+DATABASE_URL="postgresql://postgres:db_nextjs_postgres_password999@127.0.0.1:5432/db_nextjs_postgres_auth"
+
+# Run this command to create the database and tables:
+npx drizzle-kit push:pg
+
+# Check if tables are created using the following command:
+# Connect to the database using psql:
+psql postgresql://postgres:db_nextjs_postgres_password999@127.0.0.1:5432/db_nextjs_postgres_auth
+# To see the tables:
+\dt
+# To see the data in the users table:
+SELECT * FROM users;
+
+# Reset the environment variable in the .env file:
+DATABASE_URL="postgresql://postgres:db_nextjs_postgres_password999@db:5432/db_nextjs_postgres_auth"
+
+# Start using the app in the web browser:
+http://localhost:3000
