@@ -31,6 +31,7 @@ services:
       - app_network
     depends_on:
       - db
+      
   db:
     image: postgres:17-alpine
     container_name: portfolio_nextjs_postgres_auth_db
@@ -45,6 +46,12 @@ services:
       - app_network
     env_file:
       - .env  # This will ensure Docker reads the .env file
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+    driver: local
           
 networks:
   app_network:
