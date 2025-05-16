@@ -12,6 +12,8 @@ type Project = {
   tags: string[];
 };
 
+// Sample data for projects
+// Added these data here just to save the tags for all projects
 const projects_: Project[] = [
   {
     id: 1,
@@ -46,7 +48,7 @@ const projects_: Project[] = [
     title: "PDF Shop",
     description: "Digital document marketplace",
     url: "https://sell-pdf-files-node-js-with-api.vercel.app/",
-    tags: ["NodeJs", "MongoDB", "PassportJs", "EJS", "Bootstrap", "Mailjet", "Cloudinary", "Square", "Stripe", "Paysera", "Responsive design", "E-commerce", "PDF", "Digital products"],
+    tags: ["NodeJs", "MongoDB", "PassportJs", "EJS", "Pug", "Bootstrap", "Mailjet", "Cloudinary", "Square", "Stripe", "Paysera", "Responsive design", "E-commerce", "PDF", "Digital products"],
   },
   {
     id: 6,
