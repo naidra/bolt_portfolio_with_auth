@@ -1,6 +1,6 @@
 .logo-img{
   transition:all .2s ease;
-  &:hover{
-    filter: invert(100%);
-  }
+}
+.logo-img:hover{
+  filter: invert(100%);
 }
