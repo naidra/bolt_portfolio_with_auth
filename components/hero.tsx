@@ -73,7 +73,6 @@ export function Hero() {
               className="object-cover"
             />
           </div>
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent blur-xl -z-10" />
         </motion.div>
       </div>
 
