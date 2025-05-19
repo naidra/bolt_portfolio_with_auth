@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import lukasImg from "../public/images/Lukas.jpeg"
+import lukasImg from "../public/images/Lukas_cartoon.png"
 
 export function Hero() {
   const { ref, inView } = useInView({
