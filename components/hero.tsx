@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import lukasImg from "../public/images/Lukas_cartoon.png"
+import lukasCartoonImg from "../public/images/Lukas_cartoon.png"
 
 export function Hero() {
   const { ref, inView } = useInView({
@@ -65,7 +65,7 @@ export function Hero() {
         >
           <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full overflow-hidden border-4 border-primary shadow-xl">
             <Image
-              src={lukasImg}
+              src={lukasCartoonImg}
               alt="Profile"
               fill
               priority
